@@ -18,6 +18,22 @@ public class LinkedList {
 		return this.first == null;
 	}
 	
+	public Node getFirst() {
+		return first;
+	}
+
+	public void setFirst(Node first) {
+		this.first = first;
+	}
+
+	public Node getLast() {
+		return last;
+	}
+
+	public void setLast(Node last) {
+		this.last = last;
+	}
+
 	public void print(){
 		Node node = this.first;
 		while(node != null){
@@ -56,12 +72,28 @@ public class LinkedList {
 	}
 	
 	public void reverse(){
+		Node last_ = this.first;
 		Node current = this.first;
-		Node nextNode = null;
-		while(current.next != null){
-			nextNode = current.next;
-			
+		Node before = null;
+		while(current != null){
+			this.last = before;
+			before = current;
+			current = current.next;
+			before.next = last;
 		}
+		this.first = before;
+		this.last = last_;
+		
+	}
+	
+	public int size(){
+		Node node= first;
+		int size = 0;
+		while(node != null){
+			node = node.next;
+			size++;
+		}
+		return size;
 	}
 	
 	

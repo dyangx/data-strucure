@@ -17,8 +17,15 @@ public class Test {
 		for(Node  node: list){
 			linkedList.insert(node.num,node.name);
 		}
-		linkedList.delete(3);
+		linkedList.delete(2);
 		linkedList.print();
+		System.out.println(linkedList.size());
+		
+		System.out.println("-----------------");
+		linkedList.reverse();
+		linkedList.print();
+		System.out.println(linkedList.size());
+		System.out.println(linkedList.getLast().name);
 	}
 }
 
