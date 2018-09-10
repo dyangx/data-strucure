@@ -26,6 +26,7 @@ tmp/
 local.properties
 .settings/
 .loadpath
+.myeclipse/
 
 # Eclipse Core
 .project
