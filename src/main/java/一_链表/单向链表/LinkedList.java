@@ -1,4 +1,4 @@
-package Ò»_Á´±í.µ¥ÏòÁ´±í;
+package ä¸€_é“¾è¡¨.å•å‘é“¾è¡¨;
 
 class Node{
 	int num;
@@ -37,7 +37,7 @@ public class LinkedList {
 	public void print(){
 		Node node = this.first;
 		while(node != null){
-			System.out.println("Ñ§ºÅ£º"+node.num+"   ĞÕÃû£º"+node.name);
+			System.out.println("å­¦å·ï¼š"+node.num+"   å§“åï¼š"+node.name);
 			node = node.next;
 		}
 	}
@@ -84,6 +84,37 @@ public class LinkedList {
 		this.first = before;
 		this.last = last_;
 		
+	}
+	
+	public Node reverse(Node head){
+		if(head == null || head.next == null){
+			first = head;
+			return head;
+		}
+		Node newHead = reverse(head.next);
+		head.next.next = head;
+		head.next = null;
+		last = head;
+		return newHead;
+	}
+	
+	public Node reverse2(Node head){
+		if(head == null){
+			return head;
+		}
+		last = head;
+		Node curr = head.next;
+		Node prev = head;
+		Node temp = null;
+		while(curr != null){
+			temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+		head.next = null;
+		first = prev;
+		return prev;
 	}
 	
 	public int size(){

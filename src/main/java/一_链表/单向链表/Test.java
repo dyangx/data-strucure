@@ -1,4 +1,4 @@
-package 一_链表.单向链表;
+package 涓�_閾捐〃.鍗曞悜閾捐〃;
 
 import java.util.*;
 
@@ -17,15 +17,19 @@ public class Test {
 		for(Node  node: list){
 			linkedList.insert(node.num,node.name);
 		}
-		linkedList.delete(2);
+//		linkedList.delete(2);
 		linkedList.print();
 		System.out.println(linkedList.size());
-		
 		System.out.println("-----------------");
-		linkedList.reverse();
+		linkedList.reverse2(linkedList.getFirst());
 		linkedList.print();
 		System.out.println(linkedList.size());
-		System.out.println(linkedList.getLast().name);
+		Node node = linkedList.getFirst();
+		System.out.println("------XXXXXXX--");
+		while(node != null){
+			System.out.println(node.num);
+			node = node.next;
+		}
 	}
 }
 
